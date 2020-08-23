@@ -1,0 +1,17 @@
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache
+  - CNAME
+  - LICEN
+
+collections:
+  authors:
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-jemoji

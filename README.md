@@ -1,1 +1,2 @@
-# louloucodes.github.io
+# blog hello
+[posts](https://louloucodes.github.io/posts/)

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python Max</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python Max</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python Max" />
+<meta name="author" content="louloucodes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Today I Learned: Python tip The little lambda that could" />
+<meta property="og:description" content="Today I Learned: Python tip The little lambda that could" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-15T00:00:00-04:00" />
+<script type="application/ld+json">
+{"url":"/posts/python-max","headline":"Python Max","dateModified":"2020-08-15T00:00:00-04:00","datePublished":"2020-08-15T00:00:00-04:00","author":{"@type":"Person","name":"louloucodes"},"mainEntityOfPage":{"@type":"WebPage","@id":"/posts/python-max"},"description":"Today I Learned: Python tip The little lambda that could","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+</nav>
+
+    <h1>Python Max</h1>
+<p>15 Aug 2020 - louloucodes</p>
+
+<h1 id="today-i-learned-python-tip">Today I Learned: Python tip</h1>
+<h3 id="the-little-lambda-that-could">The little lambda that could</h3>
+
+<p>I needed to find the maximum of values in a dictionary. I had an old school (and inefficient) solution in mind:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>max = 0
+max_key = ''
+for entry in my_dictionary:
+    if len(my_dictionary[entry]) &gt; max:
+        max = len(my_dictionary[entry])
+        max_key = entry
+</code></pre></div></div>
+<p>And then I made the wise choice to see if there is a better way, and of course there is. <em>Always check the documentation.</em> Documentation is still a bit of a slog for me, so often I have to search for examples too.
+Here is the <a href="https://docs.python.org/3/library/functions.html#max">documentation</a>.</p>
+
+<p>I don’t remember what the example was, so I will record my own! Here it is for posterity:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>max(my_dictionary.keys(), key = (lambda entry: len(my_dictionary[entry]))
+</code></pre></div></div>
+
+<p>How wonderful!</p>
+
+<p>I have not unleashed the complete power of the <a href="https://docs.python.org/3/library/functions.html#max"><code class="language-plaintext highlighter-rouge">max</code> function</a> as described in the documentation, but I now have a taste of it. Also can be used with <a href="https://docs.python.org/3/library/functions.html#min"><code class="language-plaintext highlighter-rouge">min</code></a> and <a href="https://docs.python.org/3/library/functions.html#sorted"><code class="language-plaintext highlighter-rouge">sorted</code></a> and maybe even other yet-to-be-discovered-by-me functions.</p>
+
+<p>Python :snake:, I think I :sparkling_heart: you.</p>
+
+
+  </body>
+</html>
