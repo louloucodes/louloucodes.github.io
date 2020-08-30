@@ -1,3 +1,10 @@
+---
+layout: post
+title: Get your site up and running
+category: jekyll
+tags: meta jekyll github blog cli vi
+---
+
 # "Get up and running in *seconds*," they said.
 
 To be fair, I did get this site up and running in seconds...but only after 

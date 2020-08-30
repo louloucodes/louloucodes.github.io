@@ -1,6 +1,9 @@
 ---
 layout: post
 author: louloucodes
+title: Python tip of the day
+category: python
+tags: python til tip documentation example max lambda
 ---
 
 # Today I Learned: Python tip
