@@ -20,22 +20,12 @@ layout: default
   </div>
   <b>Tags: </b>
   {% if page.tags != "" %}
-    {% for tag in page.tags%}
-      <a href="tags/{{ tag }}.md">
-      {{ tag }}
-      </a>
+    {% for tag in page.tags %}
+
+         {{ tag }}
+
     {% endfor %}
   {% endif %}
-
-  {% for tag in post.tags %}
-    {% assign tag_slug = tag | slugify: "raw" %}
-    <a class="tag-link"
-       href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
-       rel="category tag"
-    >
-       #{{ tag }}
-    </a>
-  {% endfor %}
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
