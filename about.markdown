@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+navigation: true
 ---
 This page tells you nothing about me! However ...
 
