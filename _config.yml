@@ -27,15 +27,15 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
   - jemoji
-collections:
-  tags:
-    output: true
-    permalink: tags/:path/
+  - jekyll-tagging
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

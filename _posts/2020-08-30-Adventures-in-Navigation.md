@@ -5,8 +5,8 @@ category: jekyll
 tags: jekyll liquid navbar tags
 ---
 Add another item to the list of things that are not so easy for
-me: tags
-Something so common straightforward as tagging posts and pages
+me: tags. 
+Something so straightforward as tagging posts and pages
 for content should be easy to implement in a language that touts
 itself as easy and accessible. 
 

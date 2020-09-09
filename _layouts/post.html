@@ -21,9 +21,7 @@ layout: default
   <b>Tags: </b>
   {% if page.tags != "" %}
     {% for tag in page.tags %}
-
-         {{ tag }}
-
+      <a href={{ site.url }}/tag/{{ tag }}/index.html>{{ tag }} </a>
     {% endfor %}
   {% endif %}
 
