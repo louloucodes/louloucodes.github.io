@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-08T23:33:29-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LouLou Codes</title><subtitle>Learning new skills at the tender age of &quot;none of your beeswax.&quot;  </subtitle><entry><title type="html">Adventures In Tagging Part 1</title><link href="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html" rel="alternate" type="text/html" title="Adventures In Tagging Part 1" /><published>2020-09-08T00:00:00-04:00</published><updated>2020-09-08T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1</id><content type="html" xml:base="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html">&lt;p&gt;The headline is&lt;/p&gt;
+&lt;h3 id=&quot;i-got-the-tagging-to-work&quot;&gt;I got the tagging to work!!!&lt;/h3&gt;
+&lt;p&gt;Don’t know why I expected tagging to have some sort of easy implementation. Clearly I don’t know what I’m doing!&lt;/p&gt;
+
+&lt;p&gt;Attempts included:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;creating tag pages by hand. Clearly the wrong solution.&lt;/li&gt;
+  &lt;li&gt;writing a python script to create tag pages. Turned out to be the wrong solution because (1) the way I wrote it require running the script every time I create a post and (2) the foundation for Jekyll is Ruby.&lt;/li&gt;
+  &lt;li&gt;finding the &lt;a href=&quot;https://github.com/pattex/jekyll-tagging&quot;&gt;‘jekyll-tagging’&lt;/a&gt; gem*, blindly following the readme, and getting super frustrated that “it isn’t working!”&lt;/li&gt;
+  &lt;li&gt;finding &lt;a href=&quot;https://jameshfisher.com/2019/05/05/how-can-i-add-tags-to-a-jekyll-blog/&quot;&gt;this blog post&lt;/a&gt; and copy-pasting the code. &lt;strong&gt;This was actually &lt;em&gt;almost&lt;/em&gt; there.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;deciding that I should really sit down and understand the code that I had just copy-pasted…never having looked at Ruby before, this was not a 5 minute exercise. Some odd syntax to learn here. I would like to shake James H. Fisher’s hand for writing the tag generating code in the first place.&lt;/li&gt;
+  &lt;li&gt;multiple branches in my github repo, and finally one frustrated reset master to at least 10 commits back.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But here I am! I have tags with links that work and pages that have information on them! Hooray! I’m going to bed.&lt;/p&gt;
+
+&lt;p&gt;TIL from * above: There’s an app for that! In Python, there’s a package for that! And now I know that in Ruby, there’s a gem for that!&lt;/p&gt;</content><author><name></name></author><category term="tags" /><category term="ruby" /><category term="git" /><category term="til" /><summary type="html">The headline is I got the tagging to work!!! Don’t know why I expected tagging to have some sort of easy implementation. Clearly I don’t know what I’m doing!</summary></entry><entry><title type="html">Cron Job</title><link href="http://localhost:4000/2020/09/06/Cron_job.html" rel="alternate" type="text/html" title="Cron Job" /><published>2020-09-06T00:00:00-04:00</published><updated>2020-09-06T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/06/Cron_job</id><content type="html" xml:base="http://localhost:4000/2020/09/06/Cron_job.html">&lt;h3 id=&quot;cron-job-how-to-make-my-life-a-little-easier&quot;&gt;Cron Job: how to make my life a little easier&lt;/h3&gt;
+&lt;p&gt;I’ve heard “automation” will take jobs away, and that sounds bad. In my job, some tasks are easy enough to do but they take my time and attention away from other, more interesting issues. For me, automation frees up time to get the real work done.&lt;/p&gt;
+
+&lt;p&gt;My first exposure to automating a programming task was AWS Lambda. Instead of running a script every day at noon to create a file to store in an AWS S3 bucket, I programmed a lambda function to do it for me. 
+This function is the same as the script I run from my machine plus a “lambda handler” method – akin to a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main()&lt;/code&gt; function – that runs when triggered. For my purposes, the trigger is a time of day. &lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html&quot;&gt;Read more about scheduling an AWS Lambda here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To create the trigger, I used a “cron expression.” Here is an example if you haven’t seen one before. The cron expression to run every day at noon is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 0 12 * * *&lt;/code&gt; There are a zillion sites that explain this, so I will not add to the pool. Instead I direct you to &lt;a href=&quot;https://www.freeformatter.com/cron-expression-generator-quartz.html&quot;&gt;the site I used to figure this out.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But what if you don’t want to use AWS to schedule a repeating task? From my own (mine … haha, NOT mine but my company’s) server, I edit a cron table, or “crontab.” To do that, bring up terminal and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt;. &lt;a href=&quot;https://opensource.com/article/17/11/how-use-cron-linux&quot;&gt;This site has more information.&lt;/a&gt; Add your cron expression followed by the path to the executable file that you are scheduling to run. And then…sit around and wait for it to do its job.&lt;/p&gt;
+
+&lt;p&gt;If you don’t want to sit around and wait, test with a cron expression that will trigger in a couple of minutes. For example, if it is 3:19pm and I want to test the execution of my script, I’ll write a cron expression to go off at 3:21 with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;21 * * * * *&lt;/code&gt;. As soon as I confirm that it worked, I’ll go back into the crontab and remove the line.&lt;/p&gt;
+
+&lt;p&gt;Note that the executable should create a log! I’ll cover that in another post – separation of concerns and all that.&lt;/p&gt;</content><author><name></name></author><category term="cron" /><category term="schedule" /><category term="automation" /><category term="AWS" /><category term="lambda" /><summary type="html">Cron Job: how to make my life a little easier I’ve heard “automation” will take jobs away, and that sounds bad. In my job, some tasks are easy enough to do but they take my time and attention away from other, more interesting issues. For me, automation frees up time to get the real work done.</summary></entry><entry><title type="html">TIL .join</title><link href="http://localhost:4000/2020/08/31/TIL-join.html" rel="alternate" type="text/html" title="TIL .join" /><published>2020-08-31T00:00:00-04:00</published><updated>2020-08-31T00:00:00-04:00</updated><id>http://localhost:4000/2020/08/31/TIL-join</id><content type="html" xml:base="http://localhost:4000/2020/08/31/TIL-join.html">&lt;h3 id=&quot;code-is-read-more-often-than-it-is-written&quot;&gt;Code is read more often than it is written.&lt;/h3&gt;
+&lt;p&gt;Who said it first? Does it matter? It is a point of fact.&lt;/p&gt;
+
+&lt;p&gt;I know my code is inefficient, non-pythonic, and medieval. I know
+this even as I write it! And yet I do not know what I do not know.
+Until I read someone else’s code – and then I say, “I didn’t 
+know you could do that!” and then I put it in my (hand-written)
+notes with hearts and stars.&lt;/p&gt;
+
+&lt;p&gt;Today I learned about &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.join&lt;/code&gt;. I had a list of email addresses to
+turn into a string, with the addresses separated by commas.&lt;/p&gt;
+
+&lt;p&gt;Here is what I was about to do:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;email_str = ''
+email_list = [ ... ] # list of email addresses
+for i in range(len(email_list)):
+    # purposefully leaving off the last address
+    email_str += email_list[i] + ', '
+email_str += email_list[-1]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This…this is old school thinking. A little pythonic thinking
+snuck in there with the negative indexing to get the last 
+element of the list.&lt;/p&gt;
+
+&lt;p&gt;Then I read a snippet written by a coder I admire…and did a 
+double take. What magic is this??? I tried it myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;', '.join(email_list)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it. That’s what I needed to do. One line.&lt;/p&gt;
+
+&lt;p&gt;I’m beginning to think
+that when there’s some functionality that should exist… it 
+already does. Python :snake:, every day I :sparkling_heart: you
+a little more.&lt;/p&gt;</content><author><name></name></author><category term="til" /><category term="python" /><summary type="html">Code is read more often than it is written. Who said it first? Does it matter? It is a point of fact.</summary></entry><entry><title type="html">Adventures in Navigation</title><link href="http://localhost:4000/jekyll/2020/08/30/Adventures-in-Navigation.html" rel="alternate" type="text/html" title="Adventures in Navigation" /><published>2020-08-30T00:00:00-04:00</published><updated>2020-08-30T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/2020/08/30/Adventures-in-Navigation</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/08/30/Adventures-in-Navigation.html">&lt;p&gt;Add another item to the list of things that are not so easy for
+me: tags. 
+Something so straightforward as tagging posts and pages
+for content should be easy to implement in a language that touts
+itself as easy and accessible.&lt;/p&gt;
+
+&lt;p&gt;For a rank beginner (hi!) this is not so easy. I’ll save my 
+misadventures in linking to tags for another post, because the
+true subject here is …&lt;/p&gt;
+&lt;h3 id=&quot;the-navbar&quot;&gt;The navbar&lt;/h3&gt;
+&lt;p&gt;I encountered issues with the navbar in one of my attempts to
+create pages for the tags. All of a sudden, the navbar filled 
+with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tag: aws&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tag: python&lt;/code&gt; and all of the other tags 
+accumulated through my posts.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-going-on&quot;&gt;What is going on?&lt;/h3&gt;
+&lt;p&gt;Some fumbling around – remember, noob here – led me to the
+default (I think?) header.html in the default minima theme. This
+is a reusable snippet of html that can be included on any page,
+and is conveniently found in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;The culprit was here:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...if my_page.title ...
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;See that? &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if my_page.title&lt;/code&gt; meant that every single page that
+had a title would appear in the navbar. Doh!&lt;/p&gt;
+
+&lt;h3 id=&quot;my-solution&quot;&gt;My solution&lt;/h3&gt;
+&lt;p&gt;I added a flag variable to the pages I want to appear in the 
+navbar. Specifically, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.html&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog.html&lt;/code&gt; (should these
+be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt;?), to the front matter:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+navbar: true
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then I returned to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;header.html&lt;/code&gt; file and changed the 
+variable controlling appearance in the header to 
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my_page.navbar&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;problem-solved&quot;&gt;Problem solved!&lt;/h3&gt;
+&lt;p&gt;And now back to the tagging problem…&lt;/p&gt;
+
+&lt;h3 id=&quot;haha&quot;&gt;Haha&lt;/h3&gt;
+&lt;p&gt;Also joke’s on me when I attempted to cite the Liquid code, my
+server raised an error…so I’ll have to figure that out too.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="jekyll" /><category term="liquid" /><category term="navbar" /><category term="tags" /><summary type="html">Add another item to the list of things that are not so easy for me: tags. Something so straightforward as tagging posts and pages for content should be easy to implement in a language that touts itself as easy and accessible.</summary></entry><entry><title type="html">AWS Lambda error fix</title><link href="http://localhost:4000/server/2020/08/28/AWS-Lambda-Error.html" rel="alternate" type="text/html" title="AWS Lambda error fix" /><published>2020-08-28T00:00:00-04:00</published><updated>2020-08-28T00:00:00-04:00</updated><id>http://localhost:4000/server/2020/08/28/AWS-Lambda-Error</id><content type="html" xml:base="http://localhost:4000/server/2020/08/28/AWS-Lambda-Error.html">&lt;h1 id=&quot;everything-was-rolling-along&quot;&gt;Everything was rolling along…&lt;/h1&gt;
+&lt;p&gt;We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: Could not install packages due to an EnvironmentError: [Errno 28] No space left on device&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It was just good luck that I was updating a lambda at the same time that this error showed up and propagated through all our lambdas. I should probably have some sort of alert set up for when this happens.&lt;/p&gt;
+
+&lt;p&gt;Our tech lead figured it out quickly – he referenced &lt;a href=&quot;https://epsagon.com/tools/free-lambda-code-storage-exceeded/&quot;&gt;this page&lt;/a&gt; and made some updates. I triggered the lambda to test it, and all was well.&lt;/p&gt;</content><author><name></name></author><category term="server" /><category term="aws" /><category term="lambda" /><category term="error" /><category term="env" /><category term="tip" /><summary type="html">Everything was rolling along… We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.</summary></entry><entry><title type="html">Get your site up and running</title><link href="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html" rel="alternate" type="text/html" title="Get your site up and running" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html">&lt;h1 id=&quot;get-up-and-running-in-seconds-they-said&quot;&gt;“Get up and running in &lt;em&gt;seconds&lt;/em&gt;,” they said.&lt;/h1&gt;
+
+&lt;p&gt;To be fair, I did get this site up and running in seconds…but only after 
+nuking two other iterations of a blog. In total: a few hours plus a few seconds, this blog is up and running.&lt;/p&gt;
+
+&lt;p&gt;I’ve learned a few things along the way:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I’m not convinced that github’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; is the way to go for blogging. It wasn’t the obvious one for me: I couldn’t figure out how to branch off of that stand-alone graph. My solution: create a repo with the name of the site. Not an elegant solution, but a solution.&lt;/li&gt;
+  &lt;li&gt;Re-acquainted with basic linux commands. It has been … a few years since I last copied directories, used the vi text editor (please don’t suggest emacs), or thought about config variables. It’s not like riding a bike after taking some time off – there’s very little muscle memory.&lt;/li&gt;
+  &lt;li&gt;Creating a web page from scratch in 2020 is (not shockingly) a completely different experience from the same thing in 1995 at which point I marked up html by hand without an IDE to check for closing tags, and I was super impressed with myself when I made a tiled background from an image. It made the page unreadable, but I didn’t care.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So…adventures in Jekyll and Liquid are in my future. Perhaps even some Ruby. I use Python in my day job: I’m a data scientist! And that’s all I’ve got for now. I’m looking forward to playing with the layout of this site, and maybe helping my friends create their own static sites to host their own projects.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="meta" /><category term="jekyll" /><category term="github" /><category term="blog" /><category term="cli" /><category term="vi" /><summary type="html">“Get up and running in seconds,” they said.</summary></entry><entry><title type="html">Python tip of the day</title><link href="http://localhost:4000/python/2020/08/25/Python-max.html" rel="alternate" type="text/html" title="Python tip of the day" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/08/25/Python-max</id><content type="html" xml:base="http://localhost:4000/python/2020/08/25/Python-max.html">&lt;h1 id=&quot;today-i-learned-python-tip&quot;&gt;Today I Learned: Python tip&lt;/h1&gt;
+&lt;h3 id=&quot;the-little-lambda-that-could&quot;&gt;The little lambda that could&lt;/h3&gt;
+
+&lt;p&gt;I needed to find the maximum of values in a dictionary. I had an old school (and inefficient) solution in mind:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;max = 0
+max_key = ''
+for entry in my_dictionary:
+    if len(my_dictionary[entry]) &amp;gt; max:
+        max = len(my_dictionary[entry])
+        max_key = entry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And then I made the wise choice to see if there is a better way, and of course there is. &lt;em&gt;Always check the documentation.&lt;/em&gt; Documentation is still a bit of a slog for me, so often I have to search for examples too.
+Here is the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#max&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I don’t remember what the example was, so I will record my own! Here it is for posterity:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;max(my_dictionary.keys(), key = (lambda entry: len(my_dictionary[entry]))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;How wonderful!&lt;/p&gt;
+
+&lt;p&gt;I have not unleashed the complete power of the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#max&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;max&lt;/code&gt; function&lt;/a&gt; as described in the documentation, but I now have a taste of it. Also can be used with &lt;a href=&quot;https://docs.python.org/3/library/functions.html#min&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://docs.python.org/3/library/functions.html#sorted&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sorted&lt;/code&gt;&lt;/a&gt; and maybe even other yet-to-be-discovered-by-me functions.&lt;/p&gt;
+
+&lt;p&gt;Python :snake:, I think I :sparkling_heart: you.&lt;/p&gt;</content><author><name>louloucodes</name></author><category term="python" /><category term="python" /><category term="til" /><category term="tip" /><category term="documentation" /><category term="example" /><category term="max" /><category term="lambda" /><summary type="html">Today I Learned: Python tip The little lambda that could</summary></entry></feed>
