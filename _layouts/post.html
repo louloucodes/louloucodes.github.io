@@ -1,5 +1,6 @@
 ---
 layout: default
+my_url: https://louloucodes.github.io
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -21,7 +22,7 @@ layout: default
   <b>Tags: </b>
   {% if page.tags != "" %}
     {% for tag in page.tags %}
-      <a href={{ site.url }}/tag/{{ tag }}/index.html>{{ tag }} </a>
+      <a href="{{ my_url }}/tag/{{ tag }}/index.html">{{ tag }} </a>
     {% endfor %}
   {% endif %}
 
