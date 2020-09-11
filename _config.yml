@@ -22,10 +22,10 @@ title: LouLou Codes
 description: >- # this means to ignore newlines until "baseurl:"
   Learning new skills at the tender age of "none of your beeswax."  
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://louloucodes.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: pretzelsbaby
+github_username:  louloucodes
 
 tag_page_layout: tag_page
 tag_page_dir: tag
