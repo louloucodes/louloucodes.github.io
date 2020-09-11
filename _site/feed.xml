@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-10T23:14:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LouLou Codes</title><subtitle>Learning new skills at the tender age of &quot;none of your beeswax.&quot;  </subtitle><entry><title type="html">Adventures In Tagging Part 1</title><link href="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html" rel="alternate" type="text/html" title="Adventures In Tagging Part 1" /><published>2020-09-08T00:00:00-04:00</published><updated>2020-09-08T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1</id><content type="html" xml:base="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html">&lt;p&gt;The headline is&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-11T00:02:28-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LouLou Codes</title><subtitle>Learning new skills at the tender age of &quot;none of your beeswax.&quot;  </subtitle><entry><title type="html">Adventures In Tagging Part 2</title><link href="http://localhost:4000/2020/09/10/Adventures-in-Tagging-Part-2.html" rel="alternate" type="text/html" title="Adventures In Tagging Part 2" /><published>2020-09-10T00:00:00-04:00</published><updated>2020-09-10T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/10/Adventures-in-Tagging-Part-2</id><content type="html" xml:base="http://localhost:4000/2020/09/10/Adventures-in-Tagging-Part-2.html">&lt;p&gt;It turns out that celebrating successful tagging was premature. The links to the tags worked &lt;em&gt;only on my local machine&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;There were a couple of wrong turns in my search to find the solution…that I will not record. The final answer came from my husband*. He actually read the documentation. &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll&quot;&gt;Here is the link.&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The key information here is&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;GitHub Pages cannot build sites using unsupported plugins. If you want to use unsupported plugins, generate your site locally and then push your site’s static files to GitHub.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-tagging&lt;/code&gt; plugin supported by GitHub? &lt;strong&gt;No&lt;/strong&gt;, it is not. 
+When I build my site locally with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;, the tagging gem generates tag pages in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, from which the pages are served.&lt;/p&gt;
+
+&lt;p&gt;GitHub does NOT serve pages from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; – and there’s no way to get around it. (I shouldn’t say “no way,” rather, no way that I found.)&lt;/p&gt;
+
+&lt;p&gt;The solution is to change my workflow**.&lt;/p&gt;
+
+&lt;h4 id=&quot;before&quot;&gt;Before:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Write a blog post on my machine.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Push changes to the GitHub repo.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;after&quot;&gt;After:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Write a blog post on my machine.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Replace the existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tag&lt;/code&gt; directory in the home directory with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tag&lt;/code&gt; directory from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Push changes to the Github repo.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I will probably end up writing a bash script to automate the workflow, but that will be another blog post.&lt;/p&gt;
+
+&lt;p&gt;Proof of concept: see the tag links below? Click on one of them!&lt;/p&gt;
+
+&lt;p&gt;The * above on husband because this one word does not do justice to all of his roles in my life: mentor, champion, git whisperer, programming wizard, to name just a few. He’s generally awesome.&lt;/p&gt;
+
+&lt;p&gt;I generally avoid the word workflow** because I dislike business jargon, but here it feels meaningful and descriptive.&lt;/p&gt;</content><author><name></name></author><category term="tags" /><category term="ruby" /><category term="jekyll" /><category term="github" /><category term="workflow" /><summary type="html">It turns out that celebrating successful tagging was premature. The links to the tags worked only on my local machine.</summary></entry><entry><title type="html">Adventures In Tagging Part 1</title><link href="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html" rel="alternate" type="text/html" title="Adventures In Tagging Part 1" /><published>2020-09-08T00:00:00-04:00</published><updated>2020-09-08T00:00:00-04:00</updated><id>http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1</id><content type="html" xml:base="http://localhost:4000/2020/09/08/Adventures-in-Tagging-part-1.html">&lt;p&gt;The headline is&lt;/p&gt;
 &lt;h3 id=&quot;i-got-the-tagging-to-work&quot;&gt;I got the tagging to work!!!&lt;/h3&gt;
 &lt;p&gt;Don’t know why I expected tagging to have some sort of easy implementation. Clearly I don’t know what I’m doing!&lt;/p&gt;
 
@@ -112,19 +149,7 @@ server raised an error…so I’ll have to figure that out too.&lt;/p&gt;</conte
 
 &lt;p&gt;It was just good luck that I was updating a lambda at the same time that this error showed up and propagated through all our lambdas. I should probably have some sort of alert set up for when this happens.&lt;/p&gt;
 
-&lt;p&gt;Our tech lead figured it out quickly – he referenced &lt;a href=&quot;https://epsagon.com/tools/free-lambda-code-storage-exceeded/&quot;&gt;this page&lt;/a&gt; and made some updates. I triggered the lambda to test it, and all was well.&lt;/p&gt;</content><author><name></name></author><category term="server" /><category term="aws" /><category term="lambda" /><category term="error" /><category term="env" /><category term="tip" /><summary type="html">Everything was rolling along… We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.</summary></entry><entry><title type="html">Get your site up and running</title><link href="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html" rel="alternate" type="text/html" title="Get your site up and running" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html">&lt;h1 id=&quot;get-up-and-running-in-seconds-they-said&quot;&gt;“Get up and running in &lt;em&gt;seconds&lt;/em&gt;,” they said.&lt;/h1&gt;
-
-&lt;p&gt;To be fair, I did get this site up and running in seconds…but only after 
-nuking two other iterations of a blog. In total: a few hours plus a few seconds, this blog is up and running.&lt;/p&gt;
-
-&lt;p&gt;I’ve learned a few things along the way:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;I’m not convinced that github’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; is the way to go for blogging. It wasn’t the obvious one for me: I couldn’t figure out how to branch off of that stand-alone graph. My solution: create a repo with the name of the site. Not an elegant solution, but a solution.&lt;/li&gt;
-  &lt;li&gt;Re-acquainted with basic linux commands. It has been … a few years since I last copied directories, used the vi text editor (please don’t suggest emacs), or thought about config variables. It’s not like riding a bike after taking some time off – there’s very little muscle memory.&lt;/li&gt;
-  &lt;li&gt;Creating a web page from scratch in 2020 is (not shockingly) a completely different experience from the same thing in 1995 at which point I marked up html by hand without an IDE to check for closing tags, and I was super impressed with myself when I made a tiled background from an image. It made the page unreadable, but I didn’t care.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So…adventures in Jekyll and Liquid are in my future. Perhaps even some Ruby. I use Python in my day job: I’m a data scientist! And that’s all I’ve got for now. I’m looking forward to playing with the layout of this site, and maybe helping my friends create their own static sites to host their own projects.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="meta" /><category term="jekyll" /><category term="github" /><category term="blog" /><category term="cli" /><category term="vi" /><summary type="html">“Get up and running in seconds,” they said.</summary></entry><entry><title type="html">Python tip of the day</title><link href="http://localhost:4000/python/2020/08/25/Python-max.html" rel="alternate" type="text/html" title="Python tip of the day" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/08/25/Python-max</id><content type="html" xml:base="http://localhost:4000/python/2020/08/25/Python-max.html">&lt;h1 id=&quot;today-i-learned-python-tip&quot;&gt;Today I Learned: Python tip&lt;/h1&gt;
+&lt;p&gt;Our tech lead figured it out quickly – he referenced &lt;a href=&quot;https://epsagon.com/tools/free-lambda-code-storage-exceeded/&quot;&gt;this page&lt;/a&gt; and made some updates. I triggered the lambda to test it, and all was well.&lt;/p&gt;</content><author><name></name></author><category term="server" /><category term="aws" /><category term="lambda" /><category term="error" /><category term="env" /><category term="tip" /><summary type="html">Everything was rolling along… We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.</summary></entry><entry><title type="html">Python tip of the day</title><link href="http://localhost:4000/python/2020/08/25/Python-max.html" rel="alternate" type="text/html" title="Python tip of the day" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/08/25/Python-max</id><content type="html" xml:base="http://localhost:4000/python/2020/08/25/Python-max.html">&lt;h1 id=&quot;today-i-learned-python-tip&quot;&gt;Today I Learned: Python tip&lt;/h1&gt;
 &lt;h3 id=&quot;the-little-lambda-that-could&quot;&gt;The little lambda that could&lt;/h3&gt;
 
 &lt;p&gt;I needed to find the maximum of values in a dictionary. I had an old school (and inefficient) solution in mind:&lt;/p&gt;
@@ -146,4 +171,16 @@ Here is the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#ma
 
 &lt;p&gt;I have not unleashed the complete power of the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#max&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;max&lt;/code&gt; function&lt;/a&gt; as described in the documentation, but I now have a taste of it. Also can be used with &lt;a href=&quot;https://docs.python.org/3/library/functions.html#min&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://docs.python.org/3/library/functions.html#sorted&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sorted&lt;/code&gt;&lt;/a&gt; and maybe even other yet-to-be-discovered-by-me functions.&lt;/p&gt;
 
-&lt;p&gt;Python :snake:, I think I :sparkling_heart: you.&lt;/p&gt;</content><author><name>louloucodes</name></author><category term="python" /><category term="python" /><category term="til" /><category term="tip" /><category term="documentation" /><category term="example" /><category term="max" /><category term="lambda" /><summary type="html">Today I Learned: Python tip The little lambda that could</summary></entry></feed>
+&lt;p&gt;Python :snake:, I think I :sparkling_heart: you.&lt;/p&gt;</content><author><name>louloucodes</name></author><category term="python" /><category term="python" /><category term="til" /><category term="tip" /><category term="documentation" /><category term="example" /><category term="max" /><category term="lambda" /><summary type="html">Today I Learned: Python tip The little lambda that could</summary></entry><entry><title type="html">Get your site up and running</title><link href="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html" rel="alternate" type="text/html" title="Get your site up and running" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/08/25/Not-so-easy-for-me.html">&lt;h1 id=&quot;get-up-and-running-in-seconds-they-said&quot;&gt;“Get up and running in &lt;em&gt;seconds&lt;/em&gt;,” they said.&lt;/h1&gt;
+
+&lt;p&gt;To be fair, I did get this site up and running in seconds…but only after 
+nuking two other iterations of a blog. In total: a few hours plus a few seconds, this blog is up and running.&lt;/p&gt;
+
+&lt;p&gt;I’ve learned a few things along the way:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I’m not convinced that github’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; is the way to go for blogging. It wasn’t the obvious one for me: I couldn’t figure out how to branch off of that stand-alone graph. My solution: create a repo with the name of the site. Not an elegant solution, but a solution.&lt;/li&gt;
+  &lt;li&gt;Re-acquainted with basic linux commands. It has been … a few years since I last copied directories, used the vi text editor (please don’t suggest emacs), or thought about config variables. It’s not like riding a bike after taking some time off – there’s very little muscle memory.&lt;/li&gt;
+  &lt;li&gt;Creating a web page from scratch in 2020 is (not shockingly) a completely different experience from the same thing in 1995 at which point I marked up html by hand without an IDE to check for closing tags, and I was super impressed with myself when I made a tiled background from an image. It made the page unreadable, but I didn’t care.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So…adventures in Jekyll and Liquid are in my future. Perhaps even some Ruby. I use Python in my day job: I’m a data scientist! And that’s all I’ve got for now. I’m looking forward to playing with the layout of this site, and maybe helping my friends create their own static sites to host their own projects.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="meta" /><category term="jekyll" /><category term="github" /><category term="blog" /><category term="cli" /><category term="vi" /><summary type="html">“Get up and running in seconds,” they said.</summary></entry></feed>
