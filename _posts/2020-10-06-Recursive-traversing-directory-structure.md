@@ -7,7 +7,7 @@ tags: python challenge project portfolio CLI recursion
 ---
 # Application of recursion
 
-On the surface of the [Directory Tree Generator challenge](https://realpython.com/intermediate-python-project-ideas/#directory-tree-generator), instinct told me that the hardest part would be traversing the directory structure. My instincts turned out to be wrong, as I solved the general problem with the os package and a single, recursive function.
+On first glance, I thought the hardest part of the [Directory Tree Generator challenge](https://realpython.com/intermediate-python-project-ideas/#directory-tree-generator) would be traversing the directory structure. My instincts turned out to be wrong, as I solved the general problem with the os package and a single, recursive function.
 
 The os package provides the functionality to explore the file structure, and in particular `os.path.listdir` and `os.path.isdir`. As I wrote it, the directory tree generator allows the user to choose which directory to be the root of the tree and how deep to traverse the file structure.
 
