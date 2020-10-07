@@ -1,7 +1,7 @@
 ---
 layout: post
 author: louloucodes
-title: Real Python Challenge
+title: Real Python Challenge: Recursive Solution
 category: python
 tags: python challenge project portfolio CLI recursion
 ---
