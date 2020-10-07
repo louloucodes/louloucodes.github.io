@@ -1,7 +1,7 @@
 ---
 layout: post
 author: louloucodes
-title: Recursive Solution to Directory Tree Generator Challenge
+title: Directory Tree Generator Challenge -- Recursive Solution
 category: python
 tags: python challenge project portfolio CLI recursion
 ---
