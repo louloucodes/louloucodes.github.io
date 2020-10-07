@@ -1,7 +1,7 @@
 ---
 layout: post
 author: louloucodes
-title: Real Python Challenge: Directory Tree Generator
+title: Real Python Challenge -- Directory Tree Generator
 category: python
 tags: python challenge project portfolio CLI recursion
 ---
