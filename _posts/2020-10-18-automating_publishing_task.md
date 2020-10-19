@@ -1,12 +1,10 @@
 ---
 layout: post
 author: louloucodes
-title: Automate Publishing Workflow
+title: Automating my publishing workflow
 category: automation
 tags: automation shell git workflow tags
 ---
-# Automating my publishing workflow...
-
 ### Adventures in tagging, continued
 
 My solution for tagging posts is the 'jekyll-tagging' plugin, which GitHub does not support. I discussed the workaround [in this post](https://louloucodes.github.io/2020/09/10/Adventures-in-Tagging-Part-2.html), and outlined the steps I needed to make ensure that pages for new tags appear.
