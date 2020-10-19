@@ -1,7 +1,7 @@
 ---
 layout: post
 author: louloucodes
-title: automating publish task
+title: Automate Publishing Workflow
 category: automation
 tags: automation shell git workflow tags
 ---
