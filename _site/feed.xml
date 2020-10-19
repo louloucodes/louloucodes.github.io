@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-18T23:30:32-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LouLou Codes</title><subtitle>Learning new skills at the tender age of &quot;none of your beeswax.&quot;  </subtitle><entry><title type="html">Directory Tree Generator Challenge – Customizing</title><link href="http://localhost:4000/python/2020/10/07/terminal-font-colors.html" rel="alternate" type="text/html" title="Directory Tree Generator Challenge -- Customizing" /><published>2020-10-07T00:00:00-04:00</published><updated>2020-10-07T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/10/07/terminal-font-colors</id><content type="html" xml:base="http://localhost:4000/python/2020/10/07/terminal-font-colors.html">&lt;h1 id=&quot;directory-tree-generator-making-it-mine&quot;&gt;Directory Tree Generator: Making it mine&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-18T23:59:18-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LouLou Codes</title><subtitle>Learning new skills at the tender age of &quot;none of your beeswax.&quot;  </subtitle><entry><title type="html">automating publish task</title><link href="http://localhost:4000/automation/2020/10/18/automating_publishing_task.html" rel="alternate" type="text/html" title="automating publish task" /><published>2020-10-18T00:00:00-04:00</published><updated>2020-10-18T00:00:00-04:00</updated><id>http://localhost:4000/automation/2020/10/18/automating_publishing_task</id><content type="html" xml:base="http://localhost:4000/automation/2020/10/18/automating_publishing_task.html">&lt;p&gt;#Automating my publishing workflow…&lt;/p&gt;
+
+&lt;h3 id=&quot;adventures-in-tagging-continued&quot;&gt;Adventures in tagging, continued&lt;/h3&gt;
+
+&lt;p&gt;My solution for tagging posts is the ‘jekyll-tagging’ plugin, which GitHub does not support. I discussed the workaround &lt;a href=&quot;https://louloucodes.github.io/2020/09/10/Adventures-in-Tagging-Part-2.html&quot;&gt;in this post&lt;/a&gt;, and outlined the steps I needed to make ensure that pages for new tags appear.&lt;/p&gt;
+
+&lt;p&gt;There aren’t that many steps, but they are kind of annoying, so… I wrote a script to automate them.&lt;/p&gt;
+
+&lt;p&gt;This is my first shell script and I am pleased with it :heart_eyes:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#! /bin/sh
+
+#automate workflow to publish blog post:
+#  make sure new auto-generated tag pages are uploaded
+#  add all, commit with message, and push to git
+
+echo Enter commit message
+read commit_message
+echo Your message is ${commit_message}
+
+pub_dir=~/my_path #I hardcoded this with the actual path
+
+# remove current tag directory
+rm -R ${pub_dir}/tag
+
+# create tag directory
+mkdir ${pub_dir}/tag
+
+# copy everything from the _site/tag directory to tag
+cp -R ${pub_dir}/_site/tag/* ${pub_dir}/tag/
+
+# add, commit, and push
+git add .
+git commit -m &quot;${commit_message}&quot;
+git push
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And a side note: I discovered that the tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLI&lt;/code&gt; isn’t working as I expect it to because the tagging process turns it into lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cli&lt;/code&gt;. Which is great! But I have to figure out how to convert that. I’m sure it will be a straightforward, built-in function like Python’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lower()&lt;/code&gt; except in Ruby.&lt;/p&gt;</content><author><name>louloucodes</name></author><category term="automation" /><category term="automation" /><category term="shell" /><category term="git" /><category term="workflow" /><category term="tags" /><summary type="html">#Automating my publishing workflow…</summary></entry><entry><title type="html">Directory Tree Generator Challenge – Customizing</title><link href="http://localhost:4000/python/2020/10/07/terminal-font-colors.html" rel="alternate" type="text/html" title="Directory Tree Generator Challenge -- Customizing" /><published>2020-10-07T00:00:00-04:00</published><updated>2020-10-07T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/10/07/terminal-font-colors</id><content type="html" xml:base="http://localhost:4000/python/2020/10/07/terminal-font-colors.html">&lt;h1 id=&quot;directory-tree-generator-making-it-mine&quot;&gt;Directory Tree Generator: Making it mine&lt;/h1&gt;
 
 &lt;p&gt;So one advantage of &lt;a href=&quot;https://louloucodes.github.io/python/2020/10/05/Real-Python-Project.html&quot;&gt;making this tool&lt;/a&gt; for myself is that I can make it do what I want and look how I want, and what I wanted was colorful printing to the terminal to help distinguish the files from the directories.&lt;/p&gt;
 
@@ -186,26 +223,4 @@ server raised an error…so I’ll have to figure that out too.&lt;/p&gt;</conte
 
 &lt;p&gt;It was just good luck that I was updating a lambda at the same time that this error showed up and propagated through all our lambdas. I should probably have some sort of alert set up for when this happens.&lt;/p&gt;
 
-&lt;p&gt;Our tech lead figured it out quickly – he referenced &lt;a href=&quot;https://epsagon.com/tools/free-lambda-code-storage-exceeded/&quot;&gt;this page&lt;/a&gt; and made some updates. I triggered the lambda to test it, and all was well.&lt;/p&gt;</content><author><name></name></author><category term="server" /><category term="aws" /><category term="lambda" /><category term="error" /><category term="env" /><category term="tip" /><summary type="html">Everything was rolling along… We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.</summary></entry><entry><title type="html">Python tip of the day</title><link href="http://localhost:4000/python/2020/08/25/Python-max.html" rel="alternate" type="text/html" title="Python tip of the day" /><published>2020-08-25T00:00:00-04:00</published><updated>2020-08-25T00:00:00-04:00</updated><id>http://localhost:4000/python/2020/08/25/Python-max</id><content type="html" xml:base="http://localhost:4000/python/2020/08/25/Python-max.html">&lt;h1 id=&quot;today-i-learned-python-tip&quot;&gt;Today I Learned: Python tip&lt;/h1&gt;
-&lt;h3 id=&quot;the-little-lambda-that-could&quot;&gt;The little lambda that could&lt;/h3&gt;
-
-&lt;p&gt;I needed to find the maximum of values in a dictionary. I had an old school (and inefficient) solution in mind:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;max = 0
-max_key = ''
-for entry in my_dictionary:
-    if len(my_dictionary[entry]) &amp;gt; max:
-        max = len(my_dictionary[entry])
-        max_key = entry
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And then I made the wise choice to see if there is a better way, and of course there is. &lt;em&gt;Always check the documentation.&lt;/em&gt; Documentation is still a bit of a slog for me, so often I have to search for examples too.
-Here is the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#max&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I don’t remember what the example was, so I will record my own! Here it is for posterity:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;max(my_dictionary.keys(), key = (lambda entry: len(my_dictionary[entry]))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;How wonderful!&lt;/p&gt;
-
-&lt;p&gt;I have not unleashed the complete power of the &lt;a href=&quot;https://docs.python.org/3/library/functions.html#max&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;max&lt;/code&gt; function&lt;/a&gt; as described in the documentation, but I now have a taste of it. Also can be used with &lt;a href=&quot;https://docs.python.org/3/library/functions.html#min&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://docs.python.org/3/library/functions.html#sorted&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sorted&lt;/code&gt;&lt;/a&gt; and maybe even other yet-to-be-discovered-by-me functions.&lt;/p&gt;
-
-&lt;p&gt;Python :snake:, I think I :sparkling_heart: you.&lt;/p&gt;</content><author><name>louloucodes</name></author><category term="python" /><category term="python" /><category term="til" /><category term="tip" /><category term="documentation" /><category term="example" /><category term="max" /><category term="lambda" /><summary type="html">Today I Learned: Python tip The little lambda that could</summary></entry></feed>
+&lt;p&gt;Our tech lead figured it out quickly – he referenced &lt;a href=&quot;https://epsagon.com/tools/free-lambda-code-storage-exceeded/&quot;&gt;this page&lt;/a&gt; and made some updates. I triggered the lambda to test it, and all was well.&lt;/p&gt;</content><author><name></name></author><category term="server" /><category term="aws" /><category term="lambda" /><category term="error" /><category term="env" /><category term="tip" /><summary type="html">Everything was rolling along… We have a handful of lambda functions running on AWS. Everything was running as it should until this morning.</summary></entry></feed>
