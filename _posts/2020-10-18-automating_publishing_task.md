@@ -5,7 +5,7 @@ title: Automate Publishing Workflow
 category: automation
 tags: automation shell git workflow tags
 ---
-#Automating my publishing workflow...
+# Automating my publishing workflow...
 
 ### Adventures in tagging, continued
 
